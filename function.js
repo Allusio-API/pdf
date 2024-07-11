@@ -94,14 +94,14 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	button#download {
 	  position: fixed;
 	  border-radius: 0.5rem;
-	  font-size: 14px;
+	  font-size: 20px;
 	  font-weight: 600;
 	  line-height: 1.5rem;
 	  color: #FFFFFF;
 	  border: none;
 	  font-family: "Roboto", sans-serif;
 	  padding: 0px 12px;
-	  height: 32px;
+	  height: 40px;
 	  background: #1C002E;
 	  top: 8px;
 	  right: 8px;

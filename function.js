@@ -94,12 +94,12 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  font-size: 14px;
 	  font-weight: 600;
 	  line-height: 1.5rem;
-	  color: #0d0d0d;
+	  color: #FFFFFF;
 	  border: none;
 	  font-family: 'Inter';
 	  padding: 0px 12px;
 	  height: 32px;
-	  background: #ffffff;
+	  background: #1C002E;
 	  top: 8px;
 	  right: 8px;
 	  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 1px 2.5px rgba(0, 0, 0, 0.1);
@@ -107,16 +107,22 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	}
   
 	button#download:hover {
-	  background: #f5f5f5;
+	  background: #FFFFFF;
+   color: #1C002E;
+   border-width: 2px;
+   border-radius: 3px;
+   border-color: #1C002E;
 	  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06), 0 6px 12px -3px rgba(0, 0, 0, 0.1);
 	}
   
 	button#download.downloading {
-	  color: #ea580c;
+	  color: #FFFFFF;
+   background: #1C002E;
 	}
   
 	button#download.done {
-	  color: #16a34a;
+	  color: #FFFFFF;
+   background: #1C002E;
 	}
   
 	::-webkit-scrollbar {
@@ -136,7 +142,7 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  <style>${customCSS}</style>
 	  <div class="main">
 	  <div class="header">
-		<button class="button" id="download">Download</button>
+		<button class="button" id="download">DOWNLOAD PDF</button>
 	  </div>
 	  <div id="content">${html}</div>
 	  </div>
@@ -144,7 +150,7 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 	  document.getElementById('download').addEventListener('click', function() {
 		var element = document.getElementById('content');
 		var button = this;
-		button.innerText = 'Downloading...';
+		button.innerText = 'PLEASE WAIT...';
 		button.className = 'downloading';
   
 		var opt = {
@@ -163,10 +169,10 @@ window.function = function (html, fileName, format, zoom, orientation, margin, b
 		}
 		};
 		html2pdf().set(opt).from(element).toPdf().get('pdf').then(function(pdf) {
-		button.innerText = 'Done 🎉';
+		button.innerText = 'DONE 🎉';
 		button.className = 'done';
 		setTimeout(function() { 
-		  button.innerText = 'Download';
+		  button.innerText = 'DOWNLOAD';
 		  button.className = ''; 
 		}, 2000);
 		}).save();
